@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        h1 {
+            color: #333;
+        }
+        .container {
+            padding-top: 20px;
+        }
+        .form-control {
+            background-color: #f8f9fa;
+        }
+        label {
+            color: #007bff;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Cadastro</h1>
+        <form action="/cadastro" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome">
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" class="form-control" id="endereco" name="endereco">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" class="form-control" id="bairro" name="bairro">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="cep">CEP:</label>
+                    <input type="text" class="form-control" id="cep" name="cep">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" class="form-control" id="cidade" name="cidade">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="estado">Estado:</label>
+                    <input type="text" class="form-control" id="estado" name="estado">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="observacoes">Observações:</label>
+                <textarea class="form-control" id="observacoes" name="observacoes"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

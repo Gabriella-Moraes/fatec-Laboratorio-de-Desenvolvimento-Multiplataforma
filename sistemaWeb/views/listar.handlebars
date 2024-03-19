@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            padding-top: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table td, table th {
+            vertical-align: middle;
+        }
+        .btn-primary, .btn-danger {
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            border-radius: 4px;
+        }
+        .btn-primary + .btn-danger {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Listar</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Bairro</th>
+                    <th>CEP</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Observações</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{nome}}</td>
+                    <td>{{endereco}}</td>
+                    <td>{{bairro}}</td>
+                    <td>{{cep}}</td>
+                    <td>{{cidade}}</td>
+                    <td>{{estado}}</td>
+                    <td>{{observacoes}}</td>
+                    <td>
+                        <button class="btn btn-primary">Atualizar</button>
+                        <button class="btn btn-danger">Excluir</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
