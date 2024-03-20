@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand me-3" href="/">Sistema Web</a>
+            <div class="ms-auto">
+                <a class="btn btn-primary btn-lg me-2" href="/">Cadastrar</a>
+                <a class="btn btn-primary btn-lg" href="/consultar">Consultar</a>
+                <a class="btn btn-primary btn-lg" href="/atualizar">Atualizar</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h3>Atualização dos dados</h3>
+            <p> Sistema Utilizado para agendamentos de serviços.</p>
+            <form action="atualizar" method="PUT">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Fulano de Tal" />
+                </div>
+                <div class="form-group">
+                    <label for="tel">Telefone:</label>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="99 9999-9999" />
+                </div>
+                <div class="form-group">
+                    <label for="origem">Origem: (selecione a opção)</label>
+                    <select class="form-control" id="origem" name="origem">
+                        <option value="celular">Celular</option>
+                        <option value="computador">Computador</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dataCont">Data do Contato:</label>
+                    <input name="data" type="date" class="form-control" id="dataCont" name="dataCont" />
+                </div>
+                <div class="form-group">
+                    <label for="observacoes">Observação:</label>
+                    <textarea class="form-control" id="observacoes" rows="3"></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
