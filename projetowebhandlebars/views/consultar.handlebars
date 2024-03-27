@@ -1,28 +1,62 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <div class="d-flex align-items-center">
-            <a class="navbar-brand me-3" href="/">Sistema Web</a>
-            <div class="ms-auto">
-                <a class="btn btn-primary btn-lg me-2" href="/">Cadastrar</a>
-                <a class="btn btn-primary btn-lg" href="/consultar">Consultar</a>
-                <a class="btn btn-primary btn-lg" href="/atualizar">Atualizar</a>
-            </div>
+        <a class="navbar-brand me-3" href="/">Sistema Web</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Cadastrar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/consultar">Consultar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/atualizar">Atualizar</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
 <div class="container mt-4">
-    <h3 class="mb-3">Consultar Clientes</h3>
-    <p>Sistema utilizado para agendamentos de serviços</p>
-    <div class="row mt-4">
+    <div class="row">
         <div class="col">
-            <div class="container bg-primary">
-                <div class="row align-items-center">
-                    <div class="col" style="color: white;">Nome</div>
-                    <div class="col" style="color: white;">Telefone</div>
-                    <div class="col" style="color: white;">Origem</div>
-                    <div class="col" style="color: white;">Data de Contato</div>
-                    <div class="col" style="color: white;">Observação</div>
-                </div>
+            <h3>Consultar - Agendamento de Potenciais Clientes</h3>
+            <p>Sistema Utilizado para agendamento de serviços.</p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="bg-primary text-light">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>Origem</th>
+                            <th>Data de Contato</th>
+                            <th>Observação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each post}}
+                        {{#dataValues}}
+                        <tr>
+                            <td>{{nome}}</td>
+                            <td>{{telefone}}</td>
+                            <td>{{origem}}</td>
+                            <td>{{data_contato}}</td>
+                            <td>{{observacao}}</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-warning"><a href="#" style="color:inherit">Editar</a></button>
+                                    <button type="button" class="btn btn-danger"><a href="#" style="color:inherit">Excluir</a></button>
+                                </div>
+                            </td>
+                        </tr>
+                        {{/dataValues}}
+                        {{/each}}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

@@ -1,12 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <div class="d-flex align-items-center">
-            <a class="navbar-brand me-3" href="/">Sistema Web</a>
-            <div class="ms-auto">
-                <a class="btn btn-primary btn-lg me-2" href="/">Cadastrar</a>
-                <a class="btn btn-primary btn-lg" href="/consultar">Consultar</a>
-                <a class="btn btn-primary btn-lg" href="/atualizar">Atualizar</a>
-            </div>
+        <a class="navbar-brand me-3" href="/">Sistema Web</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Cadastrar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/consultar">Consultar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/atualizar">Atualizar</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
@@ -15,7 +24,7 @@
         <div class="col">
             <h3>Cadastrar - Agendamento de Potenciais Clientes</h3>
             <p> Sistema Utilizado para agendamentos de serviços.</p>
-            <form action="consultar" method="POST">
+            <form action="/cadastrar" method="POST">
                 <div class="form-group">
                     <label for="nome">Nome:</label>
                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Fulano de Tal" />
@@ -33,12 +42,12 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="dataCont">Data do Contato:</label>
-                    <input name="data" type="date" class="form-control" id="dataCont" name="dataCont" />
+                    <label for="data">Data do Contato:</label>
+                    <input type="date" class="form-control" id="data" name="data_contato" />
                 </div>
                 <div class="form-group">
                     <label for="observacoes">Observação:</label>
-                    <textarea class="form-control" id="observacoes" rows="3"></textarea>
+                    <textarea class="form-control" id="observacoes" name="observacao" rows="3"></textarea>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
