@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand me-3" href="/">Sistema Web</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Cadastrar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/consultar">Consultar</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h3>Atualização dos dados</h3>
+            <p> Sistema Utilizado para agendamentos de serviços.</p>
+            {{#each post}}
+                {{#dataValues}}
+                    <form action="/atualizar" method="POST">
+                        <input type="hidden" name="id" class="form-control" id="id" value="{{id}}">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Fulano de Tal" value="{{nome}}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">Telefone:</label>
+                            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="99 9999-9999" value="{{telefone}}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="origem">Origem: (selecione a opção)</label>
+                            <select class="form-control" id="origem" name="origem" value="{{origem}}">
+                                <option value="celular">Celular</option>
+                                <option value="computador">Computador</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="data_contato">Data do Contato:</label>
+                            <input name="data" type="date" class="form-control" id="data_contato" name="data_contato" value="{{data_contato}}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="observacoes">Observação:</label>
+                            <textarea class="form-control" id="observacoes" rows="3">{{observacao}}</textarea>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Atualizar</button>
+                    </form>
+                {{/dataValues}}
+            {{/each}}
+        </div>
+    </div>
+</div>

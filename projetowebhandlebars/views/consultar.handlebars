@@ -13,9 +13,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/consultar">Consultar</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/atualizar">Atualizar</a>
-                </li>
             </ul>
         </div>
     </div>
@@ -48,8 +45,8 @@
                             <td>{{observacao}}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-warning"><a href="#" style="color:inherit">Editar</a></button>
-                                    <button type="button" class="btn btn-danger"><a href="#" style="color:inherit">Excluir</a></button>
+                                    <button type="button" class="btn btn-warning"><a href="/editar/{{id}}" style="color:inherit">Editar</a></button>
+                                    <button type="button" class="btn btn-danger"><a href="/excluir/{{id}}" style="color:inherit">Excluir</a></button>
                                 </div>
                             </td>
                         </tr>
